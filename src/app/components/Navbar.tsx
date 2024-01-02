@@ -1,3 +1,6 @@
+import Link from "next/link";
+import styles from "../page.module.css";
+
 const Navbar = () => {
   return (
     <div
@@ -6,12 +9,18 @@ const Navbar = () => {
         gridTemplateAreas: '"title about contact"',
         gridTemplateColumns: "1fr auto auto",
         width: "100%",
-        gap: "5px",
+        gap: "16px",
       }}
     >
-      <div style={{ gridArea: "title" }}>Eli Miller</div>
-      <div style={{ gridArea: "about" }}>About</div>
-      <div style={{ gridArea: "contact" }}>Contact</div>
+      <div style={{ gridArea: "title" }}>
+        <Link href="/">ELI MILLER</Link>
+      </div>
+      <div className={styles.navbarNavItem} style={{ gridArea: "about" }}>
+        <Link href="/about">ABOUT</Link>
+      </div>
+      <div className={styles.navbarNavItem} style={{ gridArea: "contact" }}>
+        <Link href="/contact">CONTACT</Link>
+      </div>
     </div>
   );
 };
